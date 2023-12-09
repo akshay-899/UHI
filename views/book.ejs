@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Appointment</title>
+  <style>
+    /* Basic Reset and Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url('https://thumbs.dreamstime.com/b/blue-heart-pulse-monitor-signal-beat-medical-healthcare-background-ecg-154045262.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .navbar {
+        background-color: #333;
+        padding: 15px;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        position: fixed;
+        overflow: hidden;
+        top: 0;
+        width:100%;
+        z-index: 2;
+    }
+    
+    .navbar-logo {
+        display: flex;
+        align-items: center;
+    }
+    
+    .logo-text {
+        font-size: 24px;
+        /* Adjust the font size as needed */
+        font-weight: bold;
+        margin-right: 30px;
+    }
+    
+    .login-btn {
+        background-color: #4CAF50;
+        /* Green color, you can customize */
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 30px;
+    }
+
+    .container {
+      background-color: #dbdae775;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      width: 400px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .appointment-details label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .appointment-details select,
+    .appointment-details input[type="date"],
+    .appointment-details input[type="time"],
+    .appointment-details input[type="submit"] {
+      width: calc(100% - 22px);
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      color: #555;
+    }
+
+    .appointment-details input[type="submit"] {
+      background-color: #4caf50;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .appointment-details input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    .footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar-logo">
+      <span class="logo-text">UHI (Unified Health Interface)</span>
+    </div>
+    <button class="login-btn" onclick="gotologin()">Logout</button>
+  </div>
+  <div class="container">
+    <h2>Book Appointment</h2>
+  
+    <div class="appointment-details">
+      <form id="appointmentForm" method="post" action="/done">
+        <label for="hospital">Select a Hospital:</label>
+        <select id="hospital" name="hospital" required>
+          <option value="">Select Hospital</option>
+          <option value="Father_Muller" name="Father_Muller">Father Muller</option>
+          <option value="Chetan Hospital" name="Chetan">Chetan Hospital</option>
+          <!-- Add other hospital options -->
+        </select>
+        <br><br>
+        <label for="appointmentDate">Select Date:</label>
+        <input type="date" id="appointmentDate" name="appointmentDate" required>
+        <br><br>
+        <label for="appointmentTime">Select Time:</label>
+        <input type="time" id="appointmentTime" name="appointmentTime" required>
+        <br><br>
+        <input type="submit" value="Submit" >
+      </form>
+    </div>
+  </div>
+  <div class="footer">
+    <p>&copy; 2023 Unified Health Interface. All rights reserved.</p>
+  </div>
+
+  <script>
+    document.getElementById('appointmentForm').addEventListener('submit', function(event) {
+      const hospital = document.getElementById('hospital').value;
+      const appointmentDate = document.getElementById('appointmentDate').value;
+      const appointmentTime = document.getElementById('appointmentTime').value;
+
+      if (!hospital || !appointmentDate || !appointmentTime) {
+        alert('Please fill in all fields.');
+        event.preventDefault();
+      } else {
+       
+      }
+    });
+  </script>
+  <script>
+    function gotologin() {
+window.location.href = '/login';
+}
+</script>
+</body>
+</html>

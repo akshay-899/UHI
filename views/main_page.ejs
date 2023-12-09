@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Main Page</title>
+  <style>
+      body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url('https://media.istockphoto.com/id/1446229465/photo/red-heart-and-stethoscope-are-on-blue-background.webp?b=1&s=170667a&w=0&k=20&c=1-aE7XV24f8qVr8fGnpvypir8fSxYaM9sHZurKoutj8='); /* Replace 'path_to_your_image.jpg' with the actual path to your image */
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+    }
+    .navbar {
+      background-color: #333;
+      padding: 15px;
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      position: fixed;
+      overflow: hidden;
+      top: 0;
+      width:100%;
+      z-index: 2;
+  }
+  
+  .navbar-logo {
+      display: flex;
+      align-items: center;
+  }
+  
+  .logo-text {
+      font-size: 24px;
+      /* Adjust the font size as needed */
+      font-weight: bold;
+      margin-right: 30px;
+  }
+  
+  .login-btn {
+      background-color: #4CAF50;
+      /* Green color, you can customize */
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 30px;
+  }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 10px;
+      width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #333;
+    }
+
+    .card p {
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .card-img {
+      width: 100%;
+      height: 150px;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.); /* Adjust the opacity and color as needed */
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      text-align: center;
+      color: #333;
+    }
+    .footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar-logo">
+      <span class="logo-text">UHI (Unified Health Interface)</span>
+    </div>
+    <button class="login-btn" onclick="gotologin()">Logout</button>
+  </div>
+  
+  <div class="container">
+    <h2>Welcome User!</h2>
+    <div class="card-container">
+      <div class="card" onclick="navigateToUserDetails(1)">
+        <img src="images/patient.jfif" alt="Patient History" class="card-img">
+        <div class="card-content">
+          <h3>Patient History</h3>
+          <p>View your medical history.</p>
+        </div>
+      </div>
+      <div class="card" onclick="redirectToAppointmentPage()">
+        <img src="images/appointment.jpg" alt="Book Appointment" class="card-img">
+        <div class="card-content">
+          <h3>Book Appointment</h3>
+          <p>Schedule a doctor's appointment.</p>
+        </div>
+      </div>
+      <div class="card" onclick="redirectToblooddonationPage()">
+        <img src="images/blood_donation.png" alt="Blood Donation" class="card-img">
+        <div class="card-content">
+          <h3>Blood Donation</h3>
+          <p>Donate blood to save lives.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <p>&copy; 2023 Unified Health Interface. All rights reserved.</p>
+  </div>
+  <script>
+
+    function navigateToUserDetails(userId) {
+        window.location.href = `/patient?id=${userId}`;
+    }
+    function redirectToAppointmentPage() {
+      window.location.href = '/book';
+    }
+    function redirectToblooddonationPage() {
+      window.location.href = '/blood_donation';
+    }
+  
+
+  </script>
+  <script>
+    function gotologin() {
+window.location.href = '/login';
+}
+</script>
+</body>
+</html>

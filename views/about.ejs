@@ -1,0 +1,292 @@
+[10:53 pm, 08/12/2023] Aniketh Nayak N: <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UHI</title>
+    <link rel="stylesheet" href="HomePage.css" />
+    <style>
+        body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar {
+    background-color: #333;
+    padding: 15px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    width:100%;
+    z-index: 2;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 24px;
+    /* Adjust the font size as needed */
+    font-weight: bold;
+    margin-right: 30px;
+}
+
+.login-btn {
+    background-color: #4CAF50;
+    /* Green color, you can customize */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.about-section {
+    background-color: #fff;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 50px auto;
+    border-radius: 10px;
+    transform: scale(0.8) translateY(40px);
+    animation: grandEntrance 1.5s ease-in-out forwards;
+    margin-top: 200px;
+}
+
+.about-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.about-content {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.benefits-section {
+    background-color: #fff;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 50px auto;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.benefits-section {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 50px auto;
+    border-radius: 10px;
+    opacity: 0;
+    transform: scale(0.8) translateY(40px);
+    animation: grandEntrance 1.5s ease-in-out forwards;
+}
+
+.benefits-category {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.category-logo {
+    width: 50px;
+    /* Adjust the width as needed */
+    height: auto;
+    margin-right: 15px;
+    /* Adjust the spacing between logo and benefits */
+    vertical-align: middle;
+}
+
+.benefit-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.benefit-item {
+    margin-bottom: 15px;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+@keyframes grandEntrance {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.benefits-category {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.category-logo {
+    width: 50px;
+    height: auto;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+.benefit-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.benefit-item {
+    margin-bottom: 15px;
+}
+
+.footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+.benefit-list-item{
+    display: flex;
+    flex-direction: column;
+}
+
+.items{
+    display: flex;
+}
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="navbar-logo">
+        <span class="logo-text">UHI (Unified Health Interface)</span>
+      </div>
+      <button class="login-btn" onclick="gotologin()">Login</button>
+    </div>
+
+    <div class="about-section">
+      <div class="about-title">
+        What actually is Unified Health Interface (UHI)??
+      </div>
+      <div class="about-content">
+        <p>
+          The Unified Health Interface (UHI) is a network of open protocols that
+          facilitate interoperability in health services. Positioned as one of
+          the foundational layers in the Ayushman Bharat Digital Mission (ABDM)
+          Stack, UHI focuses on the discoverability and delivery of health
+          services.
+        </p>
+        <p>
+          Through UHI-enabled applications, patients can discover, book,
+          conduct, and pay for services offered by a variety of participating
+          providers, all from the application of their choice.
+        </p>
+        <p>
+          <b
+            >" UHI is envisioned as an interoperable digital health network
+            which will enable patients to book and avail health services through
+            any application of their choice.</b
+          >"
+        </p>
+      </div>
+    </div>
+    <div class="benefits-section">
+      <div class="benefits-category">
+        <h2>Benefits for Patients</h2>
+        <div class="items">
+          <div class="benefit-list">
+            <img
+              src="https://uhi.abdm.gov.in/assets/images/banner/uhi-benifit.png"
+              alt="Check Icon"
+              style="width: 35px; height: auto; margin-right: 5px"
+            />
+            <img
+              src="https://uhi.abdm.gov.in/assets/images/banner/uhi-benifite4.png"
+              alt="Choice Icon"
+              style="width: 35px; height: auto; margin-right: 5px"
+            />
+            <img
+              src="https://uhi.abdm.gov.in/assets/images/banner/benifit6.png"
+              alt="Transparency Icon"
+              style="width: 35px; height: auto; margin-right: 5px"
+            />
+          </div>
+          <div class="benefit-list-item">
+            <p style="margin-top: 4px">Improved access to healthcare</p>
+            <p style="margin-top: 4px">Greater choice of applications</p>
+            <p style="margin-top: 4px">Transparency in pricing</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="benefits-category">
+        <h2>Benefits for Health Service Providers</h2>
+        <div class="items">
+          <div class="benefit-list">
+            <img
+              src="https://uhi.abdm.gov.in/assets/images/banner/hsp-icon1.png"
+              alt="Discover Icon"
+              style="width: 35px; height: auto; margin-right: 5px"
+            />
+            <img
+              src="https://uhi.abdm.gov.in/assets/images/banner/hsp-icon2.png"
+              alt="Price Icon"
+              style="width: 35px; height: auto; margin-right: 5px"
+            />
+            <img
+              src="https://uhi.abdm.gov.in/assets/images/banner/hsp-con3.png"
+              alt="Expand Icon"
+              style="width: 35px; height: auto; margin-right: 5px"
+            />
+          </div>
+          <div class="benefit-list-item">
+            <p style="margin-top: 4px"> Greater discoverability</p>
+            <p style="margin-top: 4px"> Ability to decide their service price</p>
+            <p style="margin-top: 4px"> Platform to expand their physical offering</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <p>&copy; 2023 Unified Health Interface. All rights reserved.</p>
+    </div>
+    <script>
+        function gotologin() {
+      window.location.href = '/login';
+    }
+    </script>
+  </body>
+</html>
+
+
