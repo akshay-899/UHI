@@ -185,6 +185,14 @@ body {
 .items{
     display: flex;
 }
+button{
+  /* position:fixed; */
+  height: fit-content;
+ padding: 25px;
+ margin-bottom: 30px;
+margin-left: 15px;
+  border-radius: 25%;
+}
     </style>
   </head>
   <body>
@@ -278,12 +286,20 @@ body {
         </div>
       </div>
     </div>
+    <button onclick="gotochat()">
+      Talk to our chatbot
+    </button>
     <div class="footer">
       <p>&copy; 2023 Unified Health Interface. All rights reserved.</p>
     </div>
     <script>
         function gotologin() {
       window.location.href = '/login';
+    }
+    </script>
+      <script>
+        function gotochat() {
+      window.location.href = '/robo';
     }
     </script>
   </body>

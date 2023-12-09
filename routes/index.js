@@ -33,6 +33,9 @@ router.get('/admin', function(req, res, next) {
 router.get('/adminpannel', function(req, res, next) {
   res.render('admin-pannel');
 });
+router.get('/robo', function(req, res, next) {
+  res.render('chatbot');
+});
 router.get('/blood_donation', (req, res) => {
   res.render('blood'); // Assuming you have an admin-panel.ejs file in your views folder
 });

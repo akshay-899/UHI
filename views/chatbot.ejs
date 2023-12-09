@@ -1,0 +1,194 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Your Website Title</title>
+    <!-- Other meta tags, stylesheets, and scripts -->
+</head>
+
+<body>
+    <!-- Your website content -->
+
+    <!-- Dialogflow Messenger integration 
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+        chat-icon="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.hLsGULYF6-rkvNv6gRM0HQHaG1%26pid%3DApi&ampf=1&ampipt=76f214aec2f2f215a64eb1c7ba7de3fff4bf14df757e48d853fc5b21840e40c2&ampipo=images"
+        intent="WELCOME"
+        chat-title="GoodBoy"
+        agent-id="64a6c214-1f85-4fc7-8714-0ae098dacf26"
+        language-code="en"
+    ></df-messenger>
+
+    <!-- Other scripts and closing body/html tags 
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Chatbot</title>
+  <style>
+/* Styles for the chatbot container */
+/* Styles for the chatbot container */
+body{
+    background-image:url("https://wallpapercave.com/dwp1x/wp10299388.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.chat-container {
+    margin-top: 50px;
+  width: 350px;
+  margin: auto;
+  border: 1px solid #ccc;
+    margin-top: 100px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for the chat messages */
+.chat-box {
+    
+
+  height: 300px;
+  overflow-y: scroll;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+/* Styles for individual chat messages */
+.chat-msg {
+  margin-bottom: 10px;
+}
+
+/* Styles for user messages */
+.user-msg {
+  text-align: right;
+}
+
+/* Styles for bot messages */
+.bot-msg {
+  text-align: left;
+}
+
+/* Styles for user input and send button */
+.user-input-container {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  background-color: #fff;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 5px;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border-color: dodgerblue;
+}
+
+button {
+    width: 46%;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: dodgerblue;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #007bff;
+}
+h1{
+    color:rgb(244, 153, 153) ;
+    margin-top: 25px;
+    text-align: center;
+    align-items: center;
+}
+
+  </style>
+</head>
+<body>
+    <h1>
+        Chatbot</h1>
+    
+  <div class="chat-container">
+    <div class="chat-box" id="chat-box"></div>
+    <input type="text" placeholder="Type your message..." id="user-input" autofocus>
+    <button onclick="sendMsg()">Send</button>
+  </div>
+  <script>
+const chatBox = document.getElementById('chat-box');
+const userInput = document.getElementById('user-input');
+
+// Function to add user message to the chat box
+function addUserMessage(msg) {
+  const div = document.createElement('div');
+  div.className = 'user-msg';
+  div.innerHTML = `<strong>You:</strong> ${msg}`;
+  chatBox.appendChild(div);
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+// Function to add chatbot message to the chat box
+function addBotMessage(msg) {
+  const div = document.createElement('div');
+  div.className = 'bot-msg';
+  div.innerHTML = `<strong>Chatbot:</strong> ${msg}`;
+  chatBox.appendChild(div);
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+// Function to handle user input and generate bot responses
+// Function to handle user input and generate bot responses
+function sendMsg() {
+  const msg = userInput.value.trim();
+  if (msg !== '') {
+    addUserMessage(msg);
+
+    let botResponse = 'I am a simple chatbot. How can I assist you?';
+    
+    // Check for specific keywords in the user's message and generate bot responses accordingly
+    if (msg.toLowerCase().includes('hello') || msg.toLowerCase().includes('hi')) {
+      botResponse = 'Hello! How can I help you today?';
+    } else if (msg.toLowerCase().includes('help')) {
+      botResponse = 'Sure, I can help. What do you need assistance with?';
+    } else if (msg.toLowerCase().includes('bye') || msg.toLowerCase().includes('goodbye')) {
+      botResponse = 'Goodbye! Have a great day!';
+    } else if (msg.toLowerCase().includes('appointment')) {
+      botResponse = 'To schedule an appointment, please contact our clinic at 123-456-7890.';
+    } else if (msg.toLowerCase().includes('prescription')) {
+      botResponse = 'For prescription refills, please reach out to your healthcare provider.';
+    } else if (msg.toLowerCase().includes('insurance')) {
+      botResponse = 'For any insurance-related queries, please contact our insurance department at insurance@example.com.';
+    } else if (msg.toLowerCase().includes('symptoms')) {
+      botResponse = 'Common symptoms may include fever, cough, headache, fatigue, and body aches. If you experience severe symptoms, seek immediate medical assistance.';
+    } else if (msg.toLowerCase().includes('covid-19')) {
+      botResponse = 'For information about COVID-19, visit official health websites or contact your local health authorities for the latest updates and guidelines.';
+    } else if (msg.toLowerCase().includes('emergency')) {
+      botResponse = 'In case of a medical emergency, please call emergency services (such as 911) immediately.';
+    } else {
+      botResponse = 'Im sorry, I may not have the information on that. Is there anything else I can assist you with?';
+    }
+    
+    addBotMessage(botResponse);
+    userInput.value = '';
+  }
+}
+
+
+  </script>
+</body>
+</html>
+
